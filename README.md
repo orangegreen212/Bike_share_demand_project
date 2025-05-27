@@ -48,7 +48,7 @@ The central hypothesis tested was:
 This is based on the assumption that different underlying demand patterns (e.g., weekday vs. weekend, good weather vs. bad weather) exist, and specialized models can better capture these nuances.
 
 ## Dataset
-The project utilizes a historical bike-sharing dataset (e.g., from Kaggle or a similar source – *specify if you can*), typically containing features like:
+The project utilizes a historical bike-sharing dataset  from Kaggle, typically containing features like:
 *   Datetime stamps
 *   Weather conditions (temperature, humidity, wind speed)
 *   Day type (holiday, working day)
@@ -82,7 +82,7 @@ Model performance was primarily assessed using the **Mean Absolute Percentage Er
 The results strongly support the core hypothesis that a cluster-based modeling approach can significantly enhance forecasting accuracy.
 
 ### Model Performance Comparison (Heatmap)
-![Model Performance Comparison (MAPE) Heatmap](pics/PCA K-Mean Bike Demand.png)
+![Model Performance Comparison (MAPE) Heatmap](pics/PCA_K-Mean_Bike_Demand.png)
 *Figure 1: Model Performance Comparison (MAPE). This heatmap visualizes the MAPE for each model across different data segments (Clusters 0, 1, 2, and Global). Lower MAPE values (darker blue) indicate better performance. The asterisk (*) denotes the best performing model for that specific segment.*
 
 **Key Observations from the Heatmap:**
@@ -93,7 +93,7 @@ The results strongly support the core hypothesis that a cluster-based modeling a
 *   **No Single Best Model Globally:** The optimal model varies depending on the specific data segment, reinforcing the value of the clustering approach.
 
 ### Cluster 0: Deep Dive & Global Comparison
-![Comparison with Global Model Performance (MAPE) for Cluster 0](pics/Demand Analysis and Forecasting 1.png)
+![Comparison with Global Model Performance (MAPE) for Cluster 0](pics/Demand_Analysis_and_Forecasting_1.png)
 *Figure 2: Comparison of Model Performance (MAPE) on Cluster 0 vs. Global Data. This table specifically focuses on Cluster 0, comparing the MAPE of models trained only on Cluster 0 data against their counterparts trained on the entire global dataset. The "Improvement by Clustering" column shows the percentage gain in accuracy.*
 
 **Key Observations from Cluster 0 Comparison:**
@@ -101,7 +101,7 @@ The results strongly support the core hypothesis that a cluster-based modeling a
 *   This strongly indicates that tailoring models to the specific characteristics of Cluster 0 leads to far superior local predictions.
 
 ### Interactive Demand Analysis Dashboard Snippet
-![Demand Analysis and Forecasting by Cluster for Segment 0](pics/Demand Analysis and Forecasting 2.png)
+![Demand Analysis and Forecasting by Cluster for Segment 0](pics/Demand_Analysis_and_Forecasting_2.png)
 *Figure 3: Interactive Dashboard Snippet for Demand Analysis and Forecasting (Segment 0). This image shows a part of the Streamlit application, visualizing actual demand versus forecasts from different models for Cluster 0. The sidebar displays the MAPE scores for each model on this specific segment, with XGBoost (2.70%) and Prophet (Optuna) (2.92%) being the top performers.*
 
 This interactive visualization (part of the Streamlit app) allows for dynamic exploration of model performance and forecasts across different segments.
