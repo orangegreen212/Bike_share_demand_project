@@ -4,7 +4,7 @@
 This project focuses on forecasting daily bicycle rental demand for a bike-sharing system. A key aspect of this work is the investigation into whether a cluster-based modeling approach (segmenting data first, then training models per segment) yields superior prediction accuracy compared to a single, global forecasting model.
 
 **Live Demo (via Streamlit & ngrok - *if currently active*):**
-[Link to your ngrok tunnel if you set one up for the Streamlit app]
+[https://51f8-34-16-0-35.ngrok-free.app]
 *(Note: ngrok tunnels are temporary. This link might not always be active.)*
 
 ## Table of Contents
@@ -26,6 +26,7 @@ This project focuses on forecasting daily bicycle rental demand for a bike-shari
 9.  [Technologies Used](#technologies-used)
 10. [How to Run (Locally)](#how-to-run-locally)
 11. [Future Work](#future-work)
+12. [DEMO](#DEMO)
 
 ## Project Goal
 The primary objectives were:
@@ -81,7 +82,7 @@ Model performance was primarily assessed using the **Mean Absolute Percentage Er
 The results strongly support the core hypothesis that a cluster-based modeling approach can significantly enhance forecasting accuracy.
 
 ### Model Performance Comparison (Heatmap)
-![Model Performance Comparison (MAPE) Heatmap](path/to/your/heatmap_image.png)
+![Model Performance Comparison (MAPE) Heatmap](pics/PCA K-Mean Bike Demand.png)
 *Figure 1: Model Performance Comparison (MAPE). This heatmap visualizes the MAPE for each model across different data segments (Clusters 0, 1, 2, and Global). Lower MAPE values (darker blue) indicate better performance. The asterisk (*) denotes the best performing model for that specific segment.*
 
 **Key Observations from the Heatmap:**
@@ -92,7 +93,7 @@ The results strongly support the core hypothesis that a cluster-based modeling a
 *   **No Single Best Model Globally:** The optimal model varies depending on the specific data segment, reinforcing the value of the clustering approach.
 
 ### Cluster 0: Deep Dive & Global Comparison
-![Comparison with Global Model Performance (MAPE) for Cluster 0](path/to/your/cluster0_comparison_table_image.png)
+![Comparison with Global Model Performance (MAPE) for Cluster 0](pics/Demand Analysis and Forecasting 1.png)
 *Figure 2: Comparison of Model Performance (MAPE) on Cluster 0 vs. Global Data. This table specifically focuses on Cluster 0, comparing the MAPE of models trained only on Cluster 0 data against their counterparts trained on the entire global dataset. The "Improvement by Clustering" column shows the percentage gain in accuracy.*
 
 **Key Observations from Cluster 0 Comparison:**
@@ -100,7 +101,7 @@ The results strongly support the core hypothesis that a cluster-based modeling a
 *   This strongly indicates that tailoring models to the specific characteristics of Cluster 0 leads to far superior local predictions.
 
 ### Interactive Demand Analysis Dashboard Snippet
-![Demand Analysis and Forecasting by Cluster for Segment 0](path/to/your/dashboard_snippet_image.png)
+![Demand Analysis and Forecasting by Cluster for Segment 0](pics/Demand Analysis and Forecasting 2.png)
 *Figure 3: Interactive Dashboard Snippet for Demand Analysis and Forecasting (Segment 0). This image shows a part of the Streamlit application, visualizing actual demand versus forecasts from different models for Cluster 0. The sidebar displays the MAPE scores for each model on this specific segment, with XGBoost (2.70%) and Prophet (Optuna) (2.92%) being the top performers.*
 
 This interactive visualization (part of the Streamlit app) allows for dynamic exploration of model performance and forecasts across different segments.
@@ -126,12 +127,16 @@ This interactive visualization (part of the Streamlit app) allows for dynamic ex
 *   **Web Application:** Streamlit
 *   **Deployment (for demo):** ngrok (for tunneling the local Streamlit app)
 
+## DEMO
+
+![Demo Presentation using Streamlit](pics/Demand-Analysis-and-Forecasting.gif)
+
 ## How to Run (Locally)
 
 1.  **Clone the repository:**
     ```bash
-    git clone [your-repo-url]
-    cd [your-repo-name]
+    git clone https://github.com/orangegreen212/Bike_share_demand_project/
+    cd  orangegreen212/Bike_share_demand_project
     ```
 2.  **Create a virtual environment and install dependencies:**
     ```bash
@@ -152,14 +157,3 @@ This interactive visualization (part of the Streamlit app) allows for dynamic ex
 *   **Dynamic Re-clustering:** Implement a mechanism to periodically re-evaluate cluster assignments as new data arrives.
 *   **Ensemble Modeling:** Explore ensemble techniques, potentially combining predictions from the best models for each cluster.
 *   **Deeper Dive into Cluster 1:** Investigate why Cluster 1 had a relatively higher MAPE, perhaps by exploring different features or more complex models for this segment.
-*   **More Sophisticated Clustering:** Experiment with other clustering algorithms (e.g., DBSCAN, GMM).
-*   **Cloud Deployment:** Deploy the Streamlit application on a persistent cloud platform (e.g., Heroku, Streamlit Sharing, AWS).
-
----
-
-**Remember to:**
-1.  Replace `[your-repo-url]` and `[your-repo-name]` with your actual repository details.
-2.  Replace `path/to/your/heatmap_image.png`, `path/to/your/cluster0_comparison_table_image.png`, and `path/to/your/dashboard_snippet_image.png` with the actual paths to your images within your GitHub repository (e.g., `assets/heatmap.png`).
-3.  Create a `requirements.txt` file in your repository by running `pip freeze > requirements.txt` from your activated virtual environment.
-4.  Specify your Streamlit app's main Python file name if it's not `app.py`.
-5.  If you have an active ngrok tunnel for your Streamlit app, add the link at the top.
