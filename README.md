@@ -1,4 +1,3 @@
-# Bike share demand project
 # Bike Share Demand Forecasting & Cluster-Based Modeling
 
 This project focuses on forecasting daily bicycle rental demand for a bike-sharing system. A key aspect of this work is the investigation into whether a cluster-based modeling approach (segmenting data first, then training models per segment) yields superior prediction accuracy compared to a single, global forecasting model.
