@@ -3,8 +3,7 @@
 This project focuses on forecasting daily bicycle rental demand for a bike-sharing system. A key aspect of this work is the investigation into whether a cluster-based modeling approach (segmenting data first, then training models per segment) yields superior prediction accuracy compared to a single, global forecasting model.
 
 **Live Demo (via Streamlit & ngrok - *if currently active*):**
-[https://51f8-34-16-0-35.ngrok-free.app]
-*(Note: ngrok tunnels are temporary. This link might not always be active.)*
+https://bikesharedemandproject-h7o9ftjx684krj6xbwiouw.streamlit.app/
 
 ## Table of Contents
 1.  [Project Goal](#project-goal)
