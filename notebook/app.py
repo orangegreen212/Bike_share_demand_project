@@ -7,7 +7,7 @@ import os
 import numpy as np
 
 # --- Configuration and Global Variables ---
-DATA_PATH = '/data' # Make sure this path is correct
+DATA_PATH = 'data' # Make sure this path is correct
 DEFAULT_SEGMENT = 'Global'
 FORECAST_HORIZON = 7  # Горизонт прогнозирования (важно для отображения таблицы)
 MODEL_PRED_COLUMNS = {
